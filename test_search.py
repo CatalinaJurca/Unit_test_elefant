@@ -35,8 +35,6 @@ class Test_Search(TestCase,Base_Data):
         input_box.send_keys("lenovo")
         input_box.send_keys(Keys.ENTER)
         search_message = self.driver.find_element(By.CLASS_NAME, "no-search-result").text
-        print(search_message)
-        print('****')
         expected_message = ('NU A FOST GĂSIT NICI UN REZULTAT :\nCăutarea ta pentru "lenovo" returnat 0 rezultate.')
         assert search_message == expected_message, f'error: actual message: {search_message} , expected message : {expected_message} '
 
